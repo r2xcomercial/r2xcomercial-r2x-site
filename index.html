@@ -234,6 +234,51 @@
     .mock-float-badge strong { display: block; font-size: 22px; font-weight: 800; }
     .mock-float-badge span { font-size: 10px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px; }
 
+    /* ── DEPOIMENTOS ── */
+    .testimonials { background: var(--navy); }
+    .testimonials-header { text-align: center; margin-bottom: 64px; }
+    .testimonials-header .section-sub { margin: 0 auto; }
+    .testimonials-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    }
+    .testimonial-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px; padding: 36px 32px;
+      display: flex; flex-direction: column; gap: 24px;
+      transition: all .3s; position: relative;
+    }
+    .testimonial-card::before {
+      content: '"';
+      position: absolute; top: 20px; right: 28px;
+      font-family: Georgia, serif; font-size: 64px; line-height: 1;
+      color: var(--blue); opacity: 0.3;
+    }
+    .testimonial-card:hover {
+      background: rgba(26,95,206,0.06);
+      border-color: rgba(26,95,206,0.25);
+      transform: translateY(-4px);
+    }
+    .testimonial-text {
+      font-size: 15px; color: rgba(255,255,255,0.8);
+      line-height: 1.75; font-style: italic; flex: 1;
+    }
+    .testimonial-author { display: flex; align-items: center; gap: 14px; }
+    .testimonial-photo {
+      width: 52px; height: 52px; border-radius: 50%;
+      object-fit: cover; flex-shrink: 0;
+      border: 2px solid rgba(26,95,206,0.4);
+    }
+    .testimonial-photo-fallback {
+      width: 52px; height: 52px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 16px;
+      border: 2px solid rgba(26,95,206,0.4);
+    }
+    .testimonial-info strong { display: block; font-size: 14px; font-weight: 700; }
+    .testimonial-info span { font-size: 12px; color: var(--gray); line-height: 1.4; display: block; margin-top: 2px; }
+
     /* ── PROVA SOCIAL ── */
     .social-proof {
       background: var(--navy2);
@@ -266,34 +311,47 @@
       line-height: 1.5; margin-top: 8px;
     }
     .proof-quote {
-      max-width: 680px; text-align: center;
-      padding: 40px; background: rgba(255,255,255,0.03);
+      max-width: 860px; width: 100%;
+      background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 16px; position: relative;
+      border-radius: 20px; position: relative;
+      display: flex; align-items: flex-end;
+      overflow: hidden; min-height: 220px;
     }
     .proof-quote::before {
       content: '"';
-      position: absolute; top: -20px; left: 40px;
+      position: absolute; top: -10px; left: 40px;
       font-family: 'Stapel', Georgia, serif;
       font-size: 80px; line-height: 1;
       color: var(--blue); opacity: 0.6;
     }
+    .proof-quote-content {
+      flex: 1; padding: 48px 40px 40px;
+    }
     .proof-quote blockquote {
       font-size: 18px; line-height: 1.7;
       color: rgba(255,255,255,0.85); font-style: italic;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
     .proof-cite {
-      display: flex; align-items: center; justify-content: center; gap: 12px;
-    }
-    .proof-cite-avatar {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 14px;
+      display: flex; align-items: center; gap: 12px;
     }
     .proof-cite-info strong { display: block; font-size: 14px; font-weight: 700; }
     .proof-cite-info span { font-size: 12px; color: var(--gray); }
+    .proof-quote-photo {
+      width: 220px; flex-shrink: 0;
+      align-self: flex-end;
+      display: flex; align-items: flex-end;
+    }
+    .proof-quote-photo img {
+      width: 100%; display: block;
+      filter: drop-shadow(0 -8px 24px rgba(26,95,206,0.3));
+    }
+    @media (max-width: 768px) {
+      .proof-quote-photo { display: none; }
+      .proof-quote { min-height: auto; }
+      .proof-quote-content { padding: 36px 28px 32px; }
+    }
 
     /* ── SECTION BASE ── */
     section { padding: 100px 40px; }
@@ -486,6 +544,7 @@
   <img src="images/logo-branca.png" alt="R2X Inteligência Comercial" />
   <ul>
     <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#depoimentos">Parceiros</a></li>
     <li><a href="#servicos">Serviços</a></li>
     <li><a href="#contato" class="nav-cta">Fale Conosco</a></li>
   </ul>
@@ -558,24 +617,24 @@
             <div class="mock-lead-row">
               <div class="mock-avatar"></div>
               <div class="mock-lead-info">
-                <div class="mock-lead-name">Ana Carolina S.</div>
-                <div class="mock-lead-tag">Oslo Home Family · 3 dorm.</div>
+                <div class="mock-lead-name">Rafael S.</div>
+                <div class="mock-lead-tag">Alamedas de Pádua · Tubarão</div>
               </div>
               <div class="mock-badge verde">VIP</div>
             </div>
             <div class="mock-lead-row">
               <div class="mock-avatar" style="background: linear-gradient(135deg, #1a8fce, #3ba8e0);"></div>
               <div class="mock-lead-info">
-                <div class="mock-lead-name">Marcos Oliveira</div>
-                <div class="mock-lead-tag">Alamedas de Pádua · Investimento</div>
+                <div class="mock-lead-name">Fernanda M.</div>
+                <div class="mock-lead-tag">Residencial Belvedere · São Ludgero</div>
               </div>
               <div class="mock-badge amarelo">Quente</div>
             </div>
             <div class="mock-lead-row">
               <div class="mock-avatar" style="background: linear-gradient(135deg, #5a1ace, #9b59b6);"></div>
               <div class="mock-lead-info">
-                <div class="mock-lead-name">Juliana Ramos</div>
-                <div class="mock-lead-tag">Oslo Home Family · 2 dorm.</div>
+                <div class="mock-lead-name">Diego P.</div>
+                <div class="mock-lead-tag">Alto das Mansões · Braço do Norte</div>
               </div>
               <div class="mock-badge azul">Novo</div>
             </div>
@@ -583,7 +642,7 @@
         </div>
       </div>
       <div class="mock-float-badge">
-        <strong>+200</strong>
+        <strong>+280</strong>
         <span>corretores parceiros</span>
       </div>
     </div>
@@ -595,7 +654,7 @@
   <div class="container">
     <div class="proof-numbers">
       <div class="proof-number">
-        <strong>+200</strong>
+        <strong>+280</strong>
         <p>corretores parceiros ativos em Santa Catarina</p>
       </div>
       <div class="proof-number">
@@ -608,14 +667,18 @@
       </div>
     </div>
     <div class="proof-quote">
-      <blockquote>
-        A R2X entende o que o mercado imobiliário precisa: estratégia clara, corretor bem treinado e gestão de perto. Não é sorte — é método.
-      </blockquote>
-      <div class="proof-cite">
-        <div class="proof-cite-avatar">RB</div>
-        <div class="proof-cite-info">
-          <strong>Ramon Beza</strong>
-          <span>CEO Founder · R2X Inteligência Comercial</span>
+      <div class="proof-quote-photo">
+        <img src="images/ramon.png" alt="Ramon Beza" />
+      </div>
+      <div class="proof-quote-content">
+        <blockquote>
+          A R2X entende o que o mercado imobiliário precisa: estratégia clara, corretor bem treinado e gestão de perto. Não é sorte — é método.
+        </blockquote>
+        <div class="proof-cite">
+          <div class="proof-cite-info">
+            <strong>Ramon Beza</strong>
+            <span>CEO Founder · R2X Inteligência Comercial</span>
+          </div>
         </div>
       </div>
     </div>
@@ -668,6 +731,49 @@
               <strong>Inteligência comercial</strong>
               <p>Dados e estratégia no centro de cada decisão. Sem achismos, com resultado mensurável.</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="testimonials" id="depoimentos">
+  <div class="container">
+    <div class="testimonials-header">
+      <div class="section-tag">Quem trabalha com a R2X</div>
+      <h2 class="section-title">O que dizem nossos <span>parceiros</span></h2>
+      <p class="section-sub">Corretores, imobiliárias e parceiros que fazem parte da nossa rede.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-text">A R2X é o elo de conexão do corretor com a venda. O corretor valorizado e respeitado tem mais energia, disposição e ânimo para trabalhar — e é desta forma e com essa união que entregamos resultados extraordinários: treinamento, material diferenciado, suporte para dúvidas em tempo real.</p>
+        <div class="testimonial-author">
+          <img src="images/mairon.jpeg" alt="Mairon Eing Orben" class="testimonial-photo">
+          <div class="testimonial-info">
+            <strong>Mairon Eing Orben</strong>
+            <span>Advogado, Corretor e Proprietário<br/>Marina Imóveis</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">Já produzimos material para muitos lançamentos. O que chega da R2X é diferente: briefing claro, identidade definida e foco no que o corretor precisa para vender. Menos enfeite, mais inteligência comercial.</p>
+        <div class="testimonial-author">
+          <img src="images/lucas.jpg" alt="Lucas Volpato" class="testimonial-photo">
+          <div class="testimonial-info">
+            <strong>Lucas Volpato</strong>
+            <span>Proprietário<br/>Grupo Na.Rua Comunicação Visual</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">Desde o início tive a certeza de estar ao lado de uma empresa séria e competente. O Ramon tem uma visão diferenciada do mercado — conduz cada projeto com responsabilidade, planejamento e muito conhecimento. A R2X se destaca pela excelência no atendimento e pelo compromisso em entregar oportunidades reais. É referência no setor.</p>
+        <div class="testimonial-author">
+          <img src="images/rodrigo.jpeg" alt="Rodrigo Araujo Souza" class="testimonial-photo">
+          <div class="testimonial-info">
+            <strong>Rodrigo Araujo Souza</strong>
+            <span>Gerente<br/>Conquistalar Imóveis</span>
           </div>
         </div>
       </div>
