@@ -241,6 +241,14 @@
     .testimonials-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
     }
+    .testimonials-grid .testimonial-card:nth-child(4),
+    .testimonials-grid .testimonial-card:nth-child(5) {
+      grid-column: span 1;
+    }
+    .testimonials-row2 {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
+      margin-top: 28px;
+    }
     .testimonial-card {
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.07);
@@ -774,6 +782,28 @@
           <div class="testimonial-info">
             <strong>Rodrigo Araujo Souza</strong>
             <span>Gerente<br/>Conquistalar Imóveis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials-row2">
+      <div class="testimonial-card">
+        <p class="testimonial-text">A R2X não pede criativo bonito — pede criativo que converte. Todo briefing chega com objetivo claro, público definido e foco em resultado. Isso muda tudo na produção de conteúdo para performance. É raro encontrar um cliente que entende que identidade visual sem conversão não paga conta.</p>
+        <div class="testimonial-author">
+          <img src="images/daniel-joao.jpg" alt="Daniel e João" class="testimonial-photo">
+          <div class="testimonial-info">
+            <strong>Daniel & João</strong>
+            <span>Sócios<br/>Haus Media</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">Produzir para lançamentos da R2X tem uma lógica diferente: cada cena tem um propósito comercial. O Ramon sabe exatamente o que quer transmitir e para quem. O resultado são vídeos que vendem — não só impressionam.</p>
+        <div class="testimonial-author">
+          <img src="images/rafael.jpeg" alt="Rafael Montanha" class="testimonial-photo">
+          <div class="testimonial-info">
+            <strong>Rafael Montanha</strong>
+            <span>Proprietário<br/>Montanha Films</span>
           </div>
         </div>
       </div>
