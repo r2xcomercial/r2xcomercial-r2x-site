@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>R2X Inteligência Comercial | Lançamentos Imobiliários</title>
+  <meta name="description" content="Com inteligência comercial transformamos seu projeto imobiliário em resultado financeiro. Gestão de marketing e vendas para loteamentos e incorporações." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: 'Stapel';
+      src: url('images/Stapel_ExtraBold.otf') format('opentype');
+      font-weight: 800;
+    }
+    @font-face {
+      font-family: 'Stapel';
+      src: url('images/Stapel_Regular.otf') format('opentype');
+      font-weight: 400;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #070e1f;
+      --navy2: #0d1a35;
+      --blue: #1a5fce;
+      --cyan: #3ba8e0;
+      --white: #ffffff;
+      --gray: #8fa0b8;
+      --light: #e8f0fe;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(7,14,31,0.7);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 16px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background .3s, box-shadow .3s;
+    }
+    nav.scrolled {
+      background: rgba(7,14,31,0.97);
+      box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+    }
+    nav img { height: 36px; }
+    nav ul { list-style: none; display: flex; gap: 32px; }
+    nav ul a {
+      color: var(--gray); text-decoration: none;
+      font-size: 14px; font-weight: 500; letter-spacing: 0.5px;
+      transition: color .2s;
+    }
+    nav ul a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--blue); color: #fff !important;
+      padding: 10px 22px; border-radius: 6px;
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: #1e6de8 !important; color: #fff !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #060d1e 0%, #0d1f3c 50%, #091428 100%);
+      display: flex; align-items: center;
+      padding: 120px 40px 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -200px; right: -200px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(26,95,206,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: 'R2X';
+      position: absolute; right: -40px; bottom: -60px;
+      font-family: 'Stapel', 'Barlow Condensed', sans-serif;
+      font-size: 320px; font-weight: 800;
+      color: rgba(255,255,255,0.03);
+      line-height: 1; pointer-events: none; user-select: none;
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+      width: 100%;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(26,95,206,0.2);
+      border: 1px solid rgba(26,95,206,0.4);
+      color: var(--cyan); font-size: 12px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 20px; margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'Stapel', 'Barlow Condensed', sans-serif;
+      font-size: clamp(38px, 5vw, 64px);
+      font-weight: 800; line-height: 1.05;
+      margin-bottom: 24px;
+    }
+    .hero h1 span { color: var(--cyan); }
+    .hero p {
+      font-size: 18px; color: var(--gray);
+      line-height: 1.7; margin-bottom: 40px; max-width: 480px;
+    }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--blue); color: #fff;
+      padding: 16px 32px; border-radius: 8px;
+      font-size: 16px; font-weight: 700;
+      text-decoration: none; transition: all .2s;
+      border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: #1e6de8; transform: translateY(-2px); }
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.4); color: #fff;
+      padding: 16px 32px; border-radius: 8px;
+      font-size: 16px; font-weight: 600;
+      text-decoration: none; transition: all .2s;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.08); }
+    .hero-quote {
+      margin-top: 48px; padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero-quote blockquote {
+      font-size: 16px; color: var(--gray);
+      font-style: italic; line-height: 1.6;
+    }
+    .hero-quote cite {
+      display: block; margin-top: 10px;
+      color: var(--cyan); font-size: 13px;
+      font-weight: 600; font-style: normal;
+    }
+
+    /* ── HERO MOCK ── */
+    .hero-mock {
+      position: relative; display: flex; justify-content: center;
+    }
+    .mock-window {
+      width: 100%; max-width: 480px;
+      background: #0d1829;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(26,95,206,0.2);
+      overflow: hidden;
+    }
+    .mock-topbar {
+      background: #0a1220;
+      padding: 12px 16px;
+      display: flex; align-items: center; gap: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .mock-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .mock-dot.red { background: #ff5f57; }
+    .mock-dot.yellow { background: #ffbd2e; }
+    .mock-dot.green { background: #28c840; }
+    .mock-topbar-title {
+      margin-left: 8px; font-size: 11px; color: rgba(255,255,255,0.3);
+      font-weight: 500; letter-spacing: 0.5px;
+    }
+    .mock-body { padding: 20px; }
+    .mock-section-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 12px;
+    }
+    .mock-kpis {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+      margin-bottom: 20px;
+    }
+    .mock-kpi {
+      background: rgba(26,95,206,0.1);
+      border: 1px solid rgba(26,95,206,0.2);
+      border-radius: 8px; padding: 12px 10px;
+      text-align: center;
+    }
+    .mock-kpi strong { display: block; font-size: 18px; font-weight: 800; color: #fff; }
+    .mock-kpi span { font-size: 9px; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; }
+    .mock-chart-area {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px; padding: 14px; margin-bottom: 14px;
+    }
+    .mock-chart-title { font-size: 10px; color: var(--gray); margin-bottom: 10px; font-weight: 600; }
+    .mock-bars { display: flex; align-items: flex-end; gap: 6px; height: 50px; }
+    .mock-bar {
+      flex: 1; border-radius: 3px 3px 0 0;
+      background: linear-gradient(180deg, var(--blue), rgba(26,95,206,0.4));
+      transition: all .3s;
+    }
+    .mock-leads { display: flex; flex-direction: column; gap: 6px; }
+    .mock-lead-row {
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 6px; padding: 8px 10px;
+    }
+    .mock-avatar {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      flex-shrink: 0;
+    }
+    .mock-lead-info { flex: 1; }
+    .mock-lead-name { font-size: 10px; font-weight: 600; color: #fff; }
+    .mock-lead-tag { font-size: 9px; color: var(--gray); }
+    .mock-badge {
+      font-size: 8px; font-weight: 700; padding: 3px 7px;
+      border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .mock-badge.verde { background: rgba(40,200,100,0.15); color: #28c864; border: 1px solid rgba(40,200,100,0.3); }
+    .mock-badge.amarelo { background: rgba(255,189,46,0.15); color: #ffbd2e; border: 1px solid rgba(255,189,46,0.3); }
+    .mock-badge.azul { background: rgba(59,168,224,0.15); color: var(--cyan); border: 1px solid rgba(59,168,224,0.3); }
+    .mock-float-badge {
+      position: absolute; bottom: -16px; right: -16px;
+      background: var(--blue);
+      padding: 16px 20px; border-radius: 12px;
+      box-shadow: 0 16px 40px rgba(26,95,206,0.5);
+      text-align: center;
+    }
+    .mock-float-badge strong { display: block; font-size: 22px; font-weight: 800; }
+    .mock-float-badge span { font-size: 10px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px; }
+
+    /* ── PROVA SOCIAL ── */
+    .social-proof {
+      background: var(--navy2);
+      padding: 80px 40px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .social-proof .container {
+      display: flex; flex-direction: column; align-items: center; gap: 64px;
+    }
+    .proof-numbers {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 48px; width: 100%; max-width: 860px; text-align: center;
+    }
+    .proof-number { position: relative; }
+    .proof-number::after {
+      content: '';
+      position: absolute; right: 0; top: 20%; bottom: 20%;
+      width: 1px; background: rgba(255,255,255,0.08);
+    }
+    .proof-number:last-child::after { display: none; }
+    .proof-number strong {
+      display: block;
+      font-family: 'Stapel', 'Barlow Condensed', sans-serif;
+      font-size: clamp(42px, 5vw, 64px); font-weight: 800;
+      color: var(--cyan); line-height: 1;
+    }
+    .proof-number p {
+      font-size: 14px; color: var(--gray);
+      line-height: 1.5; margin-top: 8px;
+    }
+    .proof-quote {
+      max-width: 680px; text-align: center;
+      padding: 40px; background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px; position: relative;
+    }
+    .proof-quote::before {
+      content: '"';
+      position: absolute; top: -20px; left: 40px;
+      font-family: 'Stapel', Georgia, serif;
+      font-size: 80px; line-height: 1;
+      color: var(--blue); opacity: 0.6;
+    }
+    .proof-quote blockquote {
+      font-size: 18px; line-height: 1.7;
+      color: rgba(255,255,255,0.85); font-style: italic;
+      margin-bottom: 20px;
+    }
+    .proof-cite {
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+    }
+    .proof-cite-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 14px;
+    }
+    .proof-cite-info strong { display: block; font-size: 14px; font-weight: 700; }
+    .proof-cite-info span { font-size: 12px; color: var(--gray); }
+
+    /* ── SECTION BASE ── */
+    section { padding: 100px 40px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block;
+      color: var(--cyan); font-size: 12px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Stapel', 'Barlow Condensed', sans-serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 800; line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .section-title span { color: var(--cyan); }
+    .section-sub {
+      font-size: 17px; color: var(--gray);
+      line-height: 1.7; max-width: 560px;
+    }
+
+    /* ── ABOUT ── */
+    .about { background: var(--navy); }
+    .about-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .about-img img {
+      width: 100%; border-radius: 16px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    }
+    .about-highlight {
+      background: rgba(26,95,206,0.08);
+      border: 1px solid rgba(26,95,206,0.2);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 10px 10px 0;
+      padding: 20px 24px; margin-bottom: 32px;
+    }
+    .about-highlight p {
+      font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.6;
+    }
+    .about-highlight strong { color: var(--cyan); }
+    .about-points { display: flex; flex-direction: column; gap: 20px; }
+    .about-point {
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .point-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: rgba(26,95,206,0.12);
+      border: 1px solid rgba(26,95,206,0.25);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .point-icon svg { width: 20px; height: 20px; }
+    .point-text strong { display: block; font-size: 15px; margin-bottom: 4px; }
+    .point-text p { font-size: 14px; color: var(--gray); line-height: 1.5; }
+
+    /* ── SERVICES ── */
+    .services { background: var(--navy2); }
+    .services-header { text-align: center; margin-bottom: 64px; }
+    .services-header .section-sub { margin: 0 auto; }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+    }
+    .service-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px; padding: 32px 28px;
+      transition: all .3s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      opacity: 0; transition: opacity .3s;
+    }
+    .service-card:hover {
+      background: rgba(26,95,206,0.08);
+      border-color: rgba(26,95,206,0.3);
+      transform: translateY(-4px);
+    }
+    .service-card:hover::before { opacity: 1; }
+    .service-num {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      color: var(--blue); text-transform: uppercase; margin-bottom: 16px;
+    }
+    .service-card h3 {
+      font-size: 16px; font-weight: 700;
+      line-height: 1.3; margin-bottom: 12px;
+    }
+    .service-card p { font-size: 13px; color: var(--gray); line-height: 1.6; }
+
+    /* ── CTA ── */
+    .cta {
+      background: linear-gradient(135deg, #0d1f3c 0%, #112a50 100%);
+      text-align: center;
+    }
+    .cta-inner { max-width: 700px; margin: 0 auto; }
+    .cta h2 {
+      font-family: 'Stapel', 'Barlow Condensed', sans-serif;
+      font-size: clamp(36px, 5vw, 60px); font-weight: 800;
+      line-height: 1.1; margin-bottom: 24px;
+    }
+    .cta h2 span { color: var(--cyan); }
+    .cta p { font-size: 18px; color: var(--gray); margin-bottom: 40px; line-height: 1.7; }
+    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-whatsapp {
+      background: #25d366; color: #fff;
+      padding: 16px 36px; border-radius: 8px;
+      font-size: 16px; font-weight: 700;
+      text-decoration: none; transition: all .2s;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .btn-whatsapp:hover { background: #1db954; transform: translateY(-2px); }
+    .btn-whatsapp svg { width: 20px; height: 20px; fill: white; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #040a15;
+      padding: 60px 40px 40px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px;
+    }
+    footer img { height: 32px; margin-bottom: 16px; }
+    footer p { font-size: 14px; color: var(--gray); line-height: 1.7; max-width: 300px; }
+    .footer-col h4 {
+      font-size: 13px; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; color: var(--gray);
+      margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul a {
+      color: rgba(255,255,255,0.5); text-decoration: none;
+      font-size: 14px; transition: color .2s;
+    }
+    .footer-col ul a:hover { color: #fff; }
+    .footer-bottom {
+      max-width: 1200px; margin: 40px auto 0;
+      padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.3); }
+
+    /* ── WHATSAPP FLOAT ── */
+    .whatsapp-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: #25d366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+      text-decoration: none; transition: all .2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float svg { width: 28px; height: 28px; fill: white; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .proof-numbers { gap: 32px; }
+    }
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      nav { padding: 16px 24px; }
+      .hero { padding: 100px 24px 60px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-mock { display: none; }
+      section { padding: 70px 24px; }
+      .social-proof { padding: 60px 24px; }
+      .proof-numbers { grid-template-columns: 1fr; gap: 32px; max-width: 100%; }
+      .proof-number::after { display: none; }
+      .about-inner { grid-template-columns: 1fr; gap: 40px; }
+      .about-img { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <img src="images/logo-branca.png" alt="R2X Inteligência Comercial" />
+  <ul>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#contato" class="nav-cta">Fale Conosco</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag">Inteligência Comercial em Lançamentos Imobiliários</div>
+      <h1>
+        Transformamos seu projeto em<br/>
+        <span>resultado financeiro.</span>
+      </h1>
+      <p>
+        Com estratégia, dados e gestão ativa, aceleramos as vendas dos seus
+        lançamentos imobiliários — do planejamento ao fechamento.
+      </p>
+      <div class="hero-btns">
+        <a href="https://wa.me/5548988210544?text=Ol%C3%A1%2C+quero+conhecer+a+R2X" class="btn-primary" target="_blank">
+          Quero acelerar meu lançamento
+        </a>
+        <a href="#servicos" class="btn-outline">Ver serviços</a>
+      </div>
+      <div class="hero-quote">
+        <blockquote>
+          "Empreendimento bom, é empreendimento com RESULTADO."
+          <cite>— Ramon Beza, CEO Founder da R2X</cite>
+        </blockquote>
+      </div>
+    </div>
+    <div class="hero-mock">
+      <div class="mock-window">
+        <div class="mock-topbar">
+          <div class="mock-dot red"></div>
+          <div class="mock-dot yellow"></div>
+          <div class="mock-dot green"></div>
+          <span class="mock-topbar-title">R2X — Painel de Lançamento</span>
+        </div>
+        <div class="mock-body">
+          <div class="mock-section-label">Performance do Lançamento</div>
+          <div class="mock-kpis">
+            <div class="mock-kpi">
+              <strong>87</strong>
+              <span>Leads</span>
+            </div>
+            <div class="mock-kpi">
+              <strong>24</strong>
+              <span>Propostas</span>
+            </div>
+            <div class="mock-kpi">
+              <strong>12</strong>
+              <span>Vendas</span>
+            </div>
+          </div>
+          <div class="mock-chart-area">
+            <div class="mock-chart-title">Evolução semanal de leads</div>
+            <div class="mock-bars">
+              <div class="mock-bar" style="height:30%"></div>
+              <div class="mock-bar" style="height:45%"></div>
+              <div class="mock-bar" style="height:38%"></div>
+              <div class="mock-bar" style="height:62%"></div>
+              <div class="mock-bar" style="height:55%"></div>
+              <div class="mock-bar" style="height:80%"></div>
+              <div class="mock-bar" style="height:100%; background: linear-gradient(180deg, var(--cyan), rgba(59,168,224,0.4));"></div>
+            </div>
+          </div>
+          <div class="mock-section-label">Últimos leads</div>
+          <div class="mock-leads">
+            <div class="mock-lead-row">
+              <div class="mock-avatar"></div>
+              <div class="mock-lead-info">
+                <div class="mock-lead-name">Ana Carolina S.</div>
+                <div class="mock-lead-tag">Oslo Home Family · 3 dorm.</div>
+              </div>
+              <div class="mock-badge verde">VIP</div>
+            </div>
+            <div class="mock-lead-row">
+              <div class="mock-avatar" style="background: linear-gradient(135deg, #1a8fce, #3ba8e0);"></div>
+              <div class="mock-lead-info">
+                <div class="mock-lead-name">Marcos Oliveira</div>
+                <div class="mock-lead-tag">Alamedas de Pádua · Investimento</div>
+              </div>
+              <div class="mock-badge amarelo">Quente</div>
+            </div>
+            <div class="mock-lead-row">
+              <div class="mock-avatar" style="background: linear-gradient(135deg, #5a1ace, #9b59b6);"></div>
+              <div class="mock-lead-info">
+                <div class="mock-lead-name">Juliana Ramos</div>
+                <div class="mock-lead-tag">Oslo Home Family · 2 dorm.</div>
+              </div>
+              <div class="mock-badge azul">Novo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mock-float-badge">
+        <strong>+200</strong>
+        <span>corretores parceiros</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<div class="social-proof">
+  <div class="container">
+    <div class="proof-numbers">
+      <div class="proof-number">
+        <strong>+200</strong>
+        <p>corretores parceiros ativos em Santa Catarina</p>
+      </div>
+      <div class="proof-number">
+        <strong>8</strong>
+        <p>etapas de processo comercial estruturado e replicável</p>
+      </div>
+      <div class="proof-number">
+        <strong>100%</strong>
+        <p>foco em lançamentos imobiliários — sem distrações</p>
+      </div>
+    </div>
+    <div class="proof-quote">
+      <blockquote>
+        A R2X entende o que o mercado imobiliário precisa: estratégia clara, corretor bem treinado e gestão de perto. Não é sorte — é método.
+      </blockquote>
+      <div class="proof-cite">
+        <div class="proof-cite-avatar">RB</div>
+        <div class="proof-cite-info">
+          <strong>Ramon Beza</strong>
+          <span>CEO Founder · R2X Inteligência Comercial</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-img">
+        <img src="images/ramon-2.jpeg" alt="Ramon Beza — Founder R2X" />
+      </div>
+      <div>
+        <div class="section-tag">Quem somos</div>
+        <h2 class="section-title">Gestão comercial que<br/><span>gera resultado.</span></h2>
+        <div class="about-highlight">
+          <p>Somos especialistas em <strong>estruturar e executar</strong> a operação comercial de lançamentos imobiliários — não uma imobiliária, não uma agência de marketing. Conectamos incorporadoras e loteadoras ao mercado de corretores com estratégia, dados e gestão ativa.</p>
+        </div>
+        <div class="about-points">
+          <div class="about-point">
+            <div class="point-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+              </svg>
+            </div>
+            <div class="point-text">
+              <strong>Loteamentos e Incorporações</strong>
+              <p>Gerimos empreendimentos horizontais e verticais do planejamento ao fechamento das vendas.</p>
+            </div>
+          </div>
+          <div class="about-point">
+            <div class="point-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div class="point-text">
+              <strong>Parceiros, não concorrentes</strong>
+              <p>Respeitamos e potencializamos o trabalho do corretor de imóveis — nosso principal aliado.</p>
+            </div>
+          </div>
+          <div class="about-point">
+            <div class="point-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+            </div>
+            <div class="point-text">
+              <strong>Inteligência comercial</strong>
+              <p>Dados e estratégia no centro de cada decisão. Sem achismos, com resultado mensurável.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="services" id="servicos">
+  <div class="container">
+    <div class="services-header">
+      <div class="section-tag">O que fazemos</div>
+      <h2 class="section-title">Nossas <span>soluções</span></h2>
+      <p class="section-sub">
+        Do estudo de viabilidade ao fechamento — cuidamos de cada etapa
+        do seu lançamento imobiliário com inteligência e execução.
+      </p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <h3>Pesquisa de Viabilidade e Perfil do Comprador</h3>
+        <p>Mergulhamos no cenário local para entender concorrência, perfil de público e realidade de demanda antes de qualquer movimento.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3>Branding e Marketing de Resultado</h3>
+        <p>Do conceito da marca até campanhas estratégicas com foco em conversão. Posts, vídeos e apresentações prontas para o corretor vender.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <h3>Precificação Estratégica e Posicionamento</h3>
+        <p>Definimos o preço ideal com base em margem, velocidade de venda e percepção de valor — criando uma oferta irresistível e lucrativa.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <h3>Planejamento de Lançamento com Etapas Estratégicas</h3>
+        <p>Cronograma completo: aquecimento, pré-venda, escassez planejada e lançamento oficial integrados para gerar urgência e conversão real.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <h3>Treinamento e Ativação do Mercado de Corretores</h3>
+        <p>Transformamos corretores em aliados com treinamentos práticos, conteúdos de apoio e campanhas de incentivo que geram venda.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">06</div>
+        <h3>Gestão do Funil Comercial e CRM de Vendas</h3>
+        <p>Visão clara de quem visitou, fez proposta e está perto do fechamento. Corretores, imobiliárias e leads organizados para resultado.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">07</div>
+        <h3>Negociação Comercial e Fechamento de Negócios</h3>
+        <p>Participamos ativamente das negociações trazendo segurança ao comprador e agilidade ao empreendedor. Converter com inteligência.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">08</div>
+        <h3>Relatórios de Performance e Ajustes em Tempo Real</h3>
+        <p>Monitoramos o desempenho da campanha com dados. Acompanhamos o que funciona e ajustamos continuamente durante todo o ciclo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contato">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="section-tag">Vamos conversar?</div>
+      <h2>Vamos <span>acelerar juntos?</span></h2>
+      <p>
+        Você não precisa mais depender da sorte ou do mercado "estar aquecido".
+        Com a R2X, você tem estratégia, gestão e resultado no seu próximo lançamento.
+      </p>
+      <div class="cta-btns">
+        <a href="https://wa.me/5548988210544?text=Ol%C3%A1%2C+quero+conhecer+a+R2X+Aceleradora" class="btn-whatsapp" target="_blank">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Falar com a R2X no WhatsApp
+        </a>
+        <a href="mailto:comercial@r2xlancamentos.com.br" class="btn-outline">Enviar e-mail</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <img src="images/logo-branca.png" alt="R2X" />
+      <p>
+        Inteligência comercial especializada em lançamentos imobiliários.
+        Estratégia, gestão e resultado do planejamento ao fechamento.
+      </p>
+      <p style="margin-top:16px; font-size:13px; color:rgba(255,255,255,0.25);">
+        CNPJ: 60.313.322/0001-12
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="#sobre">Sobre a R2X</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="tel:+5548988210544">(48) 98821-0544</a></li>
+        <li><a href="mailto:comercial@r2xlancamentos.com.br">comercial@r2xlancamentos.com.br</a></li>
+        <li><a href="https://instagram.com/r2x.lancamentos" target="_blank">@r2x.lancamentos</a></li>
+        <li><a href="#">Braço do Norte, SC</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 R2X Inteligência Comercial Ltda. Todos os direitos reservados.</p>
+    <p>Braço do Norte — SC</p>
+  </div>
+</footer>
+
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<a href="https://wa.me/5548988210544?text=Ol%C3%A1%2C+quero+conhecer+a+R2X" class="whatsapp-float" target="_blank" title="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  // Header blur ao rolar
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+</script>
+
+</body>
+</html>
