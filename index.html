@@ -510,6 +510,168 @@
     }
     .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.3); }
 
+    /* ── ÁREA DO CORRETOR ── */
+    .corretor-area {
+      background: #040c1c;
+      border-top: 3px solid transparent;
+      border-image: linear-gradient(90deg, var(--blue), var(--cyan), #f59e0b, var(--cyan), var(--blue)) 1;
+      padding: 72px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .corretor-area::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 15% 50%, rgba(245,158,11,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 85% 50%, rgba(26,95,206,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .corretor-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 48px; position: relative; z-index: 1;
+    }
+    .corretor-header { text-align: center; }
+    .corretor-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(245,158,11,0.12);
+      border: 1px solid rgba(245,158,11,0.35);
+      color: #f59e0b;
+      font-size: 11px; font-weight: 800;
+      letter-spacing: 3px; text-transform: uppercase;
+      padding: 7px 18px; border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .corretor-badge::before {
+      content: '';
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #f59e0b;
+      box-shadow: 0 0 0 3px rgba(245,158,11,0.3);
+      animation: pulse-dot 1.6s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { box-shadow: 0 0 0 3px rgba(245,158,11,0.3); }
+      50%       { box-shadow: 0 0 0 7px rgba(245,158,11,0.0); }
+    }
+    .corretor-header h2 {
+      font-family: 'Stapel', 'Barlow Condensed', sans-serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800; line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .corretor-header h2 span { color: #f59e0b; }
+    .corretor-header p {
+      font-size: 17px; color: var(--gray);
+      line-height: 1.7; max-width: 580px; margin: 0 auto;
+    }
+    .corretor-cards {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 24px; width: 100%; max-width: 860px;
+    }
+    .corretor-card {
+      border-radius: 20px;
+      padding: 36px 32px;
+      display: flex; flex-direction: column; gap: 20px;
+      position: relative; overflow: hidden;
+      transition: transform .3s;
+    }
+    .corretor-card:hover { transform: translateY(-4px); }
+
+    /* card CRM — destaque principal */
+    .corretor-card.card-crm {
+      background: linear-gradient(135deg, rgba(26,95,206,0.18) 0%, rgba(59,168,224,0.1) 100%);
+      border: 1px solid rgba(26,95,206,0.4);
+    }
+    .corretor-card.card-crm::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+    }
+    /* card WhatsApp */
+    .corretor-card.card-wpp {
+      background: linear-gradient(135deg, rgba(37,211,102,0.1) 0%, rgba(37,211,102,0.04) 100%);
+      border: 1px solid rgba(37,211,102,0.3);
+    }
+    .corretor-card.card-wpp::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #25d366, #1db954);
+    }
+    .corretor-card-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .card-crm .corretor-card-icon {
+      background: rgba(26,95,206,0.2);
+      border: 1px solid rgba(26,95,206,0.35);
+    }
+    .card-wpp .corretor-card-icon {
+      background: rgba(37,211,102,0.15);
+      border: 1px solid rgba(37,211,102,0.3);
+    }
+    .corretor-card-icon svg { width: 26px; height: 26px; }
+    .corretor-card-body { flex: 1; }
+    .corretor-card-body h3 {
+      font-size: 20px; font-weight: 800;
+      margin-bottom: 10px; line-height: 1.2;
+    }
+    .corretor-card-body p {
+      font-size: 14px; color: var(--gray); line-height: 1.6;
+    }
+    .corretor-card-perks {
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .corretor-perk {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 13px; color: rgba(255,255,255,0.75);
+    }
+    .corretor-perk::before {
+      content: '✓';
+      font-weight: 800; font-size: 12px;
+      flex-shrink: 0;
+    }
+    .card-crm .corretor-perk::before { color: var(--cyan); }
+    .card-wpp .corretor-perk::before { color: #25d366; }
+    .corretor-card-btn {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 15px 28px; border-radius: 10px;
+      font-size: 15px; font-weight: 700;
+      text-decoration: none; transition: all .2s;
+      text-align: center;
+    }
+    .corretor-card-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .card-crm .corretor-card-btn {
+      background: linear-gradient(135deg, var(--blue), #1e6de8);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(26,95,206,0.35);
+    }
+    .card-crm .corretor-card-btn:hover {
+      background: linear-gradient(135deg, #1e6de8, #2578f5);
+      box-shadow: 0 12px 32px rgba(26,95,206,0.5);
+      transform: translateY(-2px);
+    }
+    .card-wpp .corretor-card-btn {
+      background: #25d366;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.3);
+    }
+    .card-wpp .corretor-card-btn:hover {
+      background: #1db954;
+      box-shadow: 0 12px 32px rgba(37,211,102,0.45);
+      transform: translateY(-2px);
+    }
+    .corretor-disclaimer {
+      font-size: 12px; color: rgba(255,255,255,0.3);
+      text-align: center; max-width: 500px;
+    }
+    @media (max-width: 768px) {
+      .corretor-area { padding: 60px 24px; }
+      .corretor-cards { grid-template-columns: 1fr; max-width: 100%; }
+      .corretor-card { padding: 28px 24px; }
+    }
+
     /* ── PRÓXIMOS LANÇAMENTOS ── */
     .launches {
       background: var(--navy2);
@@ -750,6 +912,81 @@
         <span>corretores parceiros</span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ÁREA DO CORRETOR PARCEIRO -->
+<section class="corretor-area" id="corretor">
+  <div class="corretor-inner">
+
+    <div class="corretor-header">
+      <div class="corretor-badge">Corretor Parceiro</div>
+      <h2>Você ainda não é cadastrado <span>na R2X?</span></h2>
+      <p>Mais de 370 corretores já têm acesso antecipado aos nossos lançamentos, materiais prontos e comissões atrativas. Não fique de fora.</p>
+    </div>
+
+    <div class="corretor-cards">
+
+      <!-- Card CRM -->
+      <div class="corretor-card card-crm">
+        <div class="corretor-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3ba8e0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="corretor-card-body">
+          <h3>Cadastre-se no CRM da R2X</h3>
+          <p>Acesse a plataforma oficial da R2X e tenha tudo o que precisa para vender nossos lançamentos.</p>
+        </div>
+        <div class="corretor-card-perks">
+          <div class="corretor-perk">Acesso aos leads dos lançamentos</div>
+          <div class="corretor-perk">Materiais de venda prontos para usar</div>
+          <div class="corretor-perk">Acompanhamento de comissões em tempo real</div>
+          <div class="corretor-perk">Suporte direto da equipe R2X</div>
+        </div>
+        <a href="https://crm-r2x-production.up.railway.app/cadastro-corretor" class="corretor-card-btn" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+            <polyline points="10 17 15 12 10 7"/>
+            <line x1="15" y1="12" x2="3" y2="12"/>
+          </svg>
+          Quero me cadastrar no CRM
+        </a>
+      </div>
+
+      <!-- Card WhatsApp -->
+      <div class="corretor-card card-wpp">
+        <div class="corretor-card-icon">
+          <svg viewBox="0 0 24 24" fill="#25d366">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+          </svg>
+        </div>
+        <div class="corretor-card-body">
+          <h3>Entre no Grupo dos Lançamentos</h3>
+          <p>Receba em primeira mão todos os próximos lançamentos da R2X direto no seu WhatsApp.</p>
+        </div>
+        <div class="corretor-card-perks">
+          <div class="corretor-perk">Avisos antecipados de cada lançamento</div>
+          <div class="corretor-perk">Tabelas e condições de pagamento</div>
+          <div class="corretor-perk">Conteúdo exclusivo para corretores</div>
+          <div class="corretor-perk">Comunidade com +370 parceiros ativos</div>
+        </div>
+        <a href="https://chat.whatsapp.com/KT5QRzKS1fm4NKQoW8KIri?mode=gi_t" class="corretor-card-btn" target="_blank">
+          <svg viewBox="0 0 24 24" fill="white" width="18" height="18">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+          </svg>
+          Entrar no grupo agora
+        </a>
+      </div>
+
+    </div>
+
+    <p class="corretor-disclaimer">
+      O cadastro no CRM é obrigatório para participar dos lançamentos e receber leads qualificados da R2X.
+    </p>
+
   </div>
 </section>
 
