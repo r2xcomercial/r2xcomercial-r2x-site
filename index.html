@@ -823,47 +823,6 @@
     .whatsapp-float:hover { transform: scale(1.1); }
     .whatsapp-float svg { width: 28px; height: 28px; fill: white; }
 
-    /* ── FAQ ── */
-    .faq { background: var(--navy); }
-    .faq-header { text-align: center; margin-bottom: 56px; }
-    .faq-header .section-sub { margin: 0 auto; }
-    .faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-    .faq-item {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px; overflow: hidden;
-      transition: border-color .2s;
-    }
-    .faq-item.open { border-color: rgba(26,95,206,0.35); }
-    .faq-question {
-      width: 100%; background: none; border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 22px 28px; text-align: left; gap: 16px;
-      color: var(--white); font-family: 'Barlow', sans-serif;
-    }
-    .faq-question span {
-      font-size: 16px; font-weight: 600; line-height: 1.4; flex: 1;
-    }
-    .faq-icon {
-      width: 28px; height: 28px; border-radius: 50%;
-      background: rgba(26,95,206,0.15);
-      border: 1px solid rgba(26,95,206,0.3);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; transition: transform .3s, background .2s;
-    }
-    .faq-item.open .faq-icon { transform: rotate(45deg); background: rgba(26,95,206,0.3); }
-    .faq-icon svg { width: 14px; height: 14px; stroke: var(--cyan); }
-    .faq-answer {
-      max-height: 0; overflow: hidden;
-      transition: max-height .35s ease, padding .35s ease;
-      padding: 0 28px;
-    }
-    .faq-answer p {
-      font-size: 15px; color: rgba(255,255,255,0.65);
-      line-height: 1.75; padding-bottom: 24px;
-    }
-    .faq-item.open .faq-answer { max-height: 400px; }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1345,80 +1304,6 @@
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq" id="faq">
-  <div class="container">
-    <div class="faq-header">
-      <div class="section-tag">Dúvidas frequentes</div>
-      <h2 class="section-title">Perguntas de quem <span>está chegando</span></h2>
-      <p class="section-sub">As dúvidas mais comuns de incorporadores e loteadores antes de fechar com a R2X.</p>
-    </div>
-    <div class="faq-list">
-
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>A R2X é uma imobiliária ou agência de marketing?</span>
-          <div class="faq-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
-        </button>
-        <div class="faq-answer">
-          <p>Nem uma coisa nem outra. A R2X é uma <strong>gestora comercial especializada em lançamentos</strong>. Cuidamos da estratégia, do marketing de performance, da ativação de corretores e do funil de vendas — do primeiro dia de planejamento até o fechamento das unidades. Não vendemos imóveis por comissão, gerimos a operação comercial do seu empreendimento.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>Qual o tamanho mínimo de empreendimento para trabalhar com a R2X?</span>
-          <div class="faq-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
-        </button>
-        <div class="faq-answer">
-          <p>Trabalhamos com loteamentos e incorporações de porte variado, desde empreendimentos com dezenas de lotes até condomínios com centenas de unidades. O que importa é o fit estratégico. Entre em contato para conversarmos sobre o seu projeto — faremos uma avaliação honesta de viabilidade antes de qualquer proposta.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>Em quanto tempo começo a ver resultados?</span>
-          <div class="faq-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
-        </button>
-        <div class="faq-answer">
-          <p>A fase de planejamento e estruturação leva de 4 a 8 semanas, dependendo da complexidade do projeto. A partir do lançamento oficial, nosso histórico mostra que empreendimentos com o método R2X atingem volumes significativos de venda já nas primeiras semanas — especialmente nos lançamentos com pré-aquecimento planejado. O objetivo é nunca depender do "mercado aquecido".</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>Vocês atuam somente em Santa Catarina?</span>
-          <div class="faq-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
-        </button>
-        <div class="faq-answer">
-          <p>Nossa base e principal mercado é Santa Catarina, onde temos rede estabelecida de +370 corretores parceiros e profundo conhecimento do comportamento de compra regional. Para projetos em outros estados, avaliamos caso a caso — o método é replicável, mas a execução local é fundamental para resultados consistentes.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>Como funciona a remuneração da R2X?</span>
-          <div class="faq-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
-        </button>
-        <div class="faq-answer">
-          <p>Trabalhamos com modelo de <strong>gestão com remuneração híbrida</strong> — parte fixa (que cobre a estrutura de operação) e parte variável atrelada a resultado. Isso alinha completamente nossos objetivos com os seus. Os detalhes são negociados projeto a projeto, conforme escopo e volume do empreendimento. Fale conosco para receber uma proposta personalizada.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- CTA -->
 <section class="cta" id="contato">
   <div class="container">
@@ -1461,7 +1346,6 @@
         <li><a href="#sobre">Sobre a R2X</a></li>
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#lancamentos">Lançamentos</a></li>
-        <li><a href="#faq">Dúvidas Frequentes</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
     </div>
@@ -1527,23 +1411,6 @@
 
   document.querySelectorAll('.count-up').forEach(el => countObserver.observe(el));
 
-  // ── FAQ accordion ──
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item     = btn.closest('.faq-item');
-      const isOpen   = item.classList.contains('open');
-
-      // Fecha todos
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      document.querySelectorAll('.faq-question').forEach(b => b.setAttribute('aria-expanded', 'false'));
-
-      // Abre o clicado (toggle)
-      if (!isOpen) {
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
-    });
-  });
 </script>
 
 </body>
