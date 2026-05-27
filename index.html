@@ -190,6 +190,46 @@
       font-weight: 600; font-style: normal;
     }
 
+    /* ── HERO VIDEO ── */
+    .hero-video {
+      position: relative; display: flex; justify-content: center; align-items: center;
+    }
+    .hero-video-wrap {
+      position: relative; width: 100%; max-width: 540px;
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(26,95,206,0.25);
+      background: #000;
+    }
+    .hero-vid {
+      width: 100%; display: block; border-radius: 16px;
+      aspect-ratio: 16/9; object-fit: cover;
+    }
+    .hero-play-overlay {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(7,14,31,0.35);
+      cursor: pointer; transition: opacity .3s; border-radius: 16px;
+    }
+    .hero-play-overlay.hidden { opacity: 0; pointer-events: none; }
+    .play-btn {
+      width: 76px; height: 76px; border-radius: 50%;
+      background: rgba(26,95,206,0.92);
+      border: 3px solid rgba(255,255,255,0.35);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .2s, background .2s;
+      box-shadow: 0 8px 40px rgba(26,95,206,0.55);
+    }
+    .play-btn:hover { transform: scale(1.1); background: #1e6de8; }
+    .play-btn svg { width: 30px; height: 30px; fill: white; margin-left: 5px; }
+    .hero-video-label {
+      position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--blue);
+      padding: 8px 20px; border-radius: 20px;
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; white-space: nowrap;
+      box-shadow: 0 8px 24px rgba(26,95,206,0.45);
+    }
+
     /* ── HERO MOCK ── */
     .hero-mock {
       position: relative; display: flex; justify-content: center;
@@ -833,7 +873,7 @@
       nav { padding: 16px 24px; }
       .hero { padding: 100px 24px 60px; }
       .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-      .hero-mock { display: none; }
+      .hero-video { display: none; }
       section { padding: 70px 24px; }
       .social-proof { padding: 60px 24px; }
       .proof-numbers { grid-template-columns: 1fr; gap: 32px; max-width: 100%; }
@@ -886,74 +926,21 @@
         </blockquote>
       </div>
     </div>
-    <div class="hero-mock">
-      <div class="mock-window">
-        <div class="mock-topbar">
-          <div class="mock-dot red"></div>
-          <div class="mock-dot yellow"></div>
-          <div class="mock-dot green"></div>
-          <span class="mock-topbar-title">R2X — Painel de Lançamento</span>
-        </div>
-        <div class="mock-body">
-          <div class="mock-section-label">Performance do Lançamento</div>
-          <div class="mock-kpis">
-            <div class="mock-kpi">
-              <strong>87</strong>
-              <span>Leads</span>
-            </div>
-            <div class="mock-kpi">
-              <strong>24</strong>
-              <span>Propostas</span>
-            </div>
-            <div class="mock-kpi">
-              <strong>12</strong>
-              <span>Vendas</span>
-            </div>
-          </div>
-          <div class="mock-chart-area">
-            <div class="mock-chart-title">Evolução semanal de leads</div>
-            <div class="mock-bars">
-              <div class="mock-bar" style="height:30%"></div>
-              <div class="mock-bar" style="height:45%"></div>
-              <div class="mock-bar" style="height:38%"></div>
-              <div class="mock-bar" style="height:62%"></div>
-              <div class="mock-bar" style="height:55%"></div>
-              <div class="mock-bar" style="height:80%"></div>
-              <div class="mock-bar" style="height:100%; background: linear-gradient(180deg, var(--cyan), rgba(59,168,224,0.4));"></div>
-            </div>
-          </div>
-          <div class="mock-section-label">Últimos leads</div>
-          <div class="mock-leads">
-            <div class="mock-lead-row">
-              <div class="mock-avatar"></div>
-              <div class="mock-lead-info">
-                <div class="mock-lead-name">Rafael S.</div>
-                <div class="mock-lead-tag">Alamedas de Pádua · Tubarão</div>
-              </div>
-              <div class="mock-badge verde">VIP</div>
-            </div>
-            <div class="mock-lead-row">
-              <div class="mock-avatar" style="background: linear-gradient(135deg, #1a8fce, #3ba8e0);"></div>
-              <div class="mock-lead-info">
-                <div class="mock-lead-name">Fernanda M.</div>
-                <div class="mock-lead-tag">Residencial Belvedere · São Ludgero</div>
-              </div>
-              <div class="mock-badge amarelo">Quente</div>
-            </div>
-            <div class="mock-lead-row">
-              <div class="mock-avatar" style="background: linear-gradient(135deg, #5a1ace, #9b59b6);"></div>
-              <div class="mock-lead-info">
-                <div class="mock-lead-name">Diego P.</div>
-                <div class="mock-lead-tag">Alto das Mansões · Braço do Norte</div>
-              </div>
-              <div class="mock-badge azul">Novo</div>
-            </div>
+    <div class="hero-video">
+      <div class="hero-video-wrap">
+        <video
+          id="heroVideo"
+          class="hero-vid"
+          src="images/institucional-r2x.mp4"
+          preload="metadata"
+          playsinline
+        ></video>
+        <div class="hero-play-overlay" id="playOverlay">
+          <div class="play-btn">
+            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
           </div>
         </div>
-      </div>
-      <div class="mock-float-badge">
-        <strong>+370</strong>
-        <span>corretores parceiros</span>
+        <div class="hero-video-label">Vídeo Institucional R2X</div>
       </div>
     </div>
   </div>
@@ -1373,6 +1360,24 @@
 </a>
 
 <script>
+  // ── Player do vídeo institucional ──
+  const video   = document.getElementById('heroVideo');
+  const overlay = document.getElementById('playOverlay');
+  if (video && overlay) {
+    overlay.addEventListener('click', () => {
+      video.controls = true;
+      overlay.classList.add('hidden');
+      video.play();
+    });
+    video.addEventListener('pause', () => {
+      overlay.classList.remove('hidden');
+    });
+    video.addEventListener('ended', () => {
+      video.controls = false;
+      overlay.classList.remove('hidden');
+    });
+  }
+
   // ── Header blur ao rolar ──
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
