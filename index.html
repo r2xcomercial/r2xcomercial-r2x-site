@@ -3,8 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>R2X Inteligência Comercial | Lançamentos Imobiliários</title>
-  <meta name="description" content="Com inteligência comercial transformamos seu projeto imobiliário em resultado financeiro. Gestão de marketing e vendas para loteamentos e incorporações." />
+  <title>R2X Inteligência Comercial | Lançamentos Imobiliários em Santa Catarina</title>
+  <meta name="description" content="Gestão comercial especializada em lançamentos imobiliários em Santa Catarina. Loteamentos e incorporações com método R2X — +370 corretores parceiros. Do planejamento ao resultado." />
+
+  <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://r2xlancamentos.com.br/" />
+  <meta property="og:title" content="R2X Inteligência Comercial — Lançamentos Imobiliários SC" />
+  <meta property="og:description" content="+370 corretores parceiros. Transformamos projetos imobiliários em resultado financeiro — do planejamento ao fechamento." />
+  <meta property="og:image" content="https://r2xlancamentos.com.br/images/og-r2x.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="R2X Inteligência Comercial" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="R2X Inteligência Comercial — Lançamentos Imobiliários SC" />
+  <meta name="twitter:description" content="+370 corretores parceiros. Gestão comercial de lançamentos imobiliários em SC." />
+  <meta name="twitter:image" content="https://r2xlancamentos.com.br/images/og-r2x.jpg" />
+
+  <!-- SEO local -->
+  <meta name="keywords" content="lançamento imobiliário Santa Catarina, gestão comercial loteamento SC, incorporação imobiliária SC, consultoria vendas imóveis Braço do Norte, inteligência comercial imobiliária" />
+  <meta name="author" content="R2X Inteligência Comercial" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://r2xlancamentos.com.br/" />
+
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "R2X Inteligência Comercial",
+    "description": "Gestão comercial especializada em lançamentos imobiliários em Santa Catarina",
+    "url": "https://r2xlancamentos.com.br",
+    "telephone": "+5548988210544",
+    "email": "comercial@r2xlancamentos.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Braço do Norte",
+      "addressRegion": "SC",
+      "addressCountry": "BR"
+    },
+    "sameAs": ["https://instagram.com/r2x.lancamentos"]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet" />
   <style>
@@ -779,6 +823,47 @@
     .whatsapp-float:hover { transform: scale(1.1); }
     .whatsapp-float svg { width: 28px; height: 28px; fill: white; }
 
+    /* ── FAQ ── */
+    .faq { background: var(--navy); }
+    .faq-header { text-align: center; margin-bottom: 56px; }
+    .faq-header .section-sub { margin: 0 auto; }
+    .faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px; overflow: hidden;
+      transition: border-color .2s;
+    }
+    .faq-item.open { border-color: rgba(26,95,206,0.35); }
+    .faq-question {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 28px; text-align: left; gap: 16px;
+      color: var(--white); font-family: 'Barlow', sans-serif;
+    }
+    .faq-question span {
+      font-size: 16px; font-weight: 600; line-height: 1.4; flex: 1;
+    }
+    .faq-icon {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(26,95,206,0.15);
+      border: 1px solid rgba(26,95,206,0.3);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: transform .3s, background .2s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: rgba(26,95,206,0.3); }
+    .faq-icon svg { width: 14px; height: 14px; stroke: var(--cyan); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s ease, padding .35s ease;
+      padding: 0 28px;
+    }
+    .faq-answer p {
+      font-size: 15px; color: rgba(255,255,255,0.65);
+      line-height: 1.75; padding-bottom: 24px;
+    }
+    .faq-item.open .faq-answer { max-height: 400px; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -830,10 +915,10 @@
         lançamentos imobiliários — do planejamento ao fechamento.
       </p>
       <div class="hero-btns">
-        <a href="https://wa.me/5548988210544?text=Ol%C3%A1%2C+quero+conhecer+a+R2X" class="btn-primary" target="_blank">
-          Quero acelerar meu lançamento
+        <a href="https://wa.me/5548988210544?text=Ol%C3%A1%2C+quero+uma+an%C3%A1lise+gratuita+do+meu+projeto+com+a+R2X" class="btn-primary" target="_blank">
+          Solicitar análise gratuita do meu projeto
         </a>
-        <a href="#servicos" class="btn-outline">Ver serviços</a>
+        <a href="#lancamentos" class="btn-outline">Ver cases de sucesso</a>
       </div>
       <div class="hero-quote">
         <blockquote>
@@ -995,15 +1080,15 @@
   <div class="container">
     <div class="proof-numbers">
       <div class="proof-number">
-        <strong>+370</strong>
+        <strong><span class="count-up" data-target="370" data-prefix="+">0</span></strong>
         <p>corretores parceiros ativos em Santa Catarina</p>
       </div>
       <div class="proof-number">
-        <strong>8</strong>
+        <strong><span class="count-up" data-target="8">0</span></strong>
         <p>etapas de processo comercial estruturado e replicável</p>
       </div>
       <div class="proof-number">
-        <strong>100%</strong>
+        <strong><span class="count-up" data-target="100" data-suffix="%">0</span></strong>
         <p>foco em lançamentos imobiliários — sem distrações</p>
       </div>
     </div>
@@ -1260,6 +1345,80 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-header">
+      <div class="section-tag">Dúvidas frequentes</div>
+      <h2 class="section-title">Perguntas de quem <span>está chegando</span></h2>
+      <p class="section-sub">As dúvidas mais comuns de incorporadores e loteadores antes de fechar com a R2X.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>A R2X é uma imobiliária ou agência de marketing?</span>
+          <div class="faq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer">
+          <p>Nem uma coisa nem outra. A R2X é uma <strong>gestora comercial especializada em lançamentos</strong>. Cuidamos da estratégia, do marketing de performance, da ativação de corretores e do funil de vendas — do primeiro dia de planejamento até o fechamento das unidades. Não vendemos imóveis por comissão, gerimos a operação comercial do seu empreendimento.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Qual o tamanho mínimo de empreendimento para trabalhar com a R2X?</span>
+          <div class="faq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer">
+          <p>Trabalhamos com loteamentos e incorporações de porte variado, desde empreendimentos com dezenas de lotes até condomínios com centenas de unidades. O que importa é o fit estratégico. Entre em contato para conversarmos sobre o seu projeto — faremos uma avaliação honesta de viabilidade antes de qualquer proposta.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Em quanto tempo começo a ver resultados?</span>
+          <div class="faq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer">
+          <p>A fase de planejamento e estruturação leva de 4 a 8 semanas, dependendo da complexidade do projeto. A partir do lançamento oficial, nosso histórico mostra que empreendimentos com o método R2X atingem volumes significativos de venda já nas primeiras semanas — especialmente nos lançamentos com pré-aquecimento planejado. O objetivo é nunca depender do "mercado aquecido".</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Vocês atuam somente em Santa Catarina?</span>
+          <div class="faq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer">
+          <p>Nossa base e principal mercado é Santa Catarina, onde temos rede estabelecida de +370 corretores parceiros e profundo conhecimento do comportamento de compra regional. Para projetos em outros estados, avaliamos caso a caso — o método é replicável, mas a execução local é fundamental para resultados consistentes.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Como funciona a remuneração da R2X?</span>
+          <div class="faq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer">
+          <p>Trabalhamos com modelo de <strong>gestão com remuneração híbrida</strong> — parte fixa (que cobre a estrutura de operação) e parte variável atrelada a resultado. Isso alinha completamente nossos objetivos com os seus. Os detalhes são negociados projeto a projeto, conforme escopo e volume do empreendimento. Fale conosco para receber uma proposta personalizada.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta" id="contato">
   <div class="container">
@@ -1301,6 +1460,8 @@
       <ul>
         <li><a href="#sobre">Sobre a R2X</a></li>
         <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#lancamentos">Lançamentos</a></li>
+        <li><a href="#faq">Dúvidas Frequentes</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
     </div>
@@ -1328,10 +1489,60 @@
 </a>
 
 <script>
-  // Header blur ao rolar
+  // ── Header blur ao rolar ──
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // ── Contador animado (count-up) ──
+  function animateCountUp(el) {
+    const target   = parseInt(el.dataset.target, 10);
+    const prefix   = el.dataset.prefix  || '';
+    const suffix   = el.dataset.suffix  || '';
+    const duration = 1800; // ms
+    const steps    = 60;
+    const increment = target / steps;
+    let current = 0;
+    const interval = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        el.textContent = prefix + target + suffix;
+        clearInterval(interval);
+      } else {
+        el.textContent = prefix + Math.floor(current) + suffix;
+      }
+    }, duration / steps);
+  }
+
+  // Dispara quando o elemento entra na viewport (só uma vez)
+  const countObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCountUp(entry.target);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  document.querySelectorAll('.count-up').forEach(el => countObserver.observe(el));
+
+  // ── FAQ accordion ──
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item     = btn.closest('.faq-item');
+      const isOpen   = item.classList.contains('open');
+
+      // Fecha todos
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      document.querySelectorAll('.faq-question').forEach(b => b.setAttribute('aria-expanded', 'false'));
+
+      // Abre o clicado (toggle)
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
   });
 </script>
 
